@@ -1,9 +1,8 @@
 import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import SearchStack from "./SearchStack";
-
 import Landing from "../pages/Landing";
-import Favorites from "../pages/Favorites";
+import SearchStack from "./SearchStack";
+import FavoritesStack from "./FavoritesStack";
 
 import { Ionicons } from "@expo/vector-icons";
 
@@ -57,8 +56,8 @@ export default function AppTabs() {
         }}
       />
       <Screen
-        name="Favorites"
-        component={Favorites}
+        name="FavoritesStack"
+        component={FavoritesStack}
         options={{
           tabBarLabel: "Favorites",
           tabBarIcon: ({ color, size }) => {

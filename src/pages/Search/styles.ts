@@ -1,8 +1,5 @@
 import styled from "styled-components/native";
-
 import { getStatusBarHeight } from "react-native-status-bar-height";
-
-import { Platform } from "react-native";
 
 //Container layout
 export const Container = styled.View`

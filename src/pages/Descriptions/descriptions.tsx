@@ -17,6 +17,7 @@ import {
   DescriptionMovieRating,
 } from "./styles";
 import Header from "../../components/Header";
+import AsyncStorage from "@react-native-community/async-storage";
 
 //All datas used this page
 interface Parameters {
