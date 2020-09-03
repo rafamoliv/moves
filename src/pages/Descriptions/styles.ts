@@ -60,9 +60,3 @@ export const DescriptionMovieRating = styled.Text`
   padding: 5px;
   font-family: "Roboto_400Regular";
 `;
-
-export const TitleError = styled.Text`
-  font-size: 20px;
-  margin: 64px 5px 24px;
-  color: #ddd;
-`;
