@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useRoute } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import Lottie from "lottie-react-native"; // lottie to render json Lotties from After effects
 import axios from "axios";
@@ -42,7 +42,6 @@ interface Params {
 
 export default function Descriptions() {
   const routes = useRoute();
-  const navigation = useNavigation();
   const routeMovieParams = routes.params as Params;
   const [movies, setMovies] = useState<Parameters>();
 
