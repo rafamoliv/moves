@@ -1,0 +1,12 @@
+{
+  "name": "moves",
+  "displayName": "moves",
+  "expo": {
+    "name": "moves",
+    "slug": "moves",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
