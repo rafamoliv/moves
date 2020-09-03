@@ -66,21 +66,3 @@ export const TitleError = styled.Text`
   margin: 64px 5px 24px;
   color: #ddd;
 `;
-
-export const ButtonCreditos = styled.TouchableOpacity`
-  background-color: #454d4b;
-  flex-direction: row;
-  justify-content: center;
-`;
-
-export const ButtonTextCreditos = styled.Text`
-  font-size: 12px;
-  text-align: center;
-  padding: 3px;
-  color: #ddd;
-  font-family: "Roboto_400Regular";
-`;
-
-export const ViewIconInfo = styled.View`
-  top: 5px;
-`;
