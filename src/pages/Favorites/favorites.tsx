@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Container, Teste } from "./styles";
 import Header from "../../components/Header";
 
-export default function Landing() {
+export default function Favorites() {
   return (
     <Container>
       <Header />

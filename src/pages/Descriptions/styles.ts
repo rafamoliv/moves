@@ -2,6 +2,7 @@ import styled from "styled-components/native";
 
 import { getStatusBarHeight } from "react-native-status-bar-height";
 
+//container descriptions
 export const Container = styled.View`
   align-items: center;
   justify-content: center;
@@ -21,6 +22,18 @@ export const BannerMovie = styled.Image`
   border-radius: 5px;
 `;
 
+export const FavoriteHeart = styled.TouchableOpacity`
+  position: absolute;
+  margin-top: 10px
+  right: 10;
+`;
+
+export const UnFavoriteHeart = styled.TouchableOpacity`
+  position: absolute;
+  margin-top: 10px
+  right: 10;
+`;
+
 export const BannerInfo = styled.View`
   justify-content: space-around;
   flex-direction: column;
@@ -28,7 +41,7 @@ export const BannerInfo = styled.View`
   border-radius: 6px;
 `;
 
-export const TitleMovie = styled.Text`
+export const MovieTitle = styled.Text`
   font-size: 30px;
   text-align: center
   margin: 10px 15px 10px;

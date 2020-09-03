@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { Entypo } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import Lottie from "lottie-react-native"; // lottie to render json Lotties from After effects
 import axios from "axios";
 import moves from "../../assets/icons/playGold.json"; // json Lottie
-import { Container, TitleDescriptionMovie, DescriptionMovieRating, Banner, BannerMovie, TitleMovie, DescriptionMovie, BannerInfo } from "./styles";
+import {
+  Container,
+  MovieTitle,
+  TitleDescriptionMovie,
+  Banner,
+  BannerMovie,
+  BannerInfo,
+  FavoriteHeart,
+  UnFavoriteHeart,
+  DescriptionMovie,
+  DescriptionMovieRating,
+} from "./styles";
 import Header from "../../components/Header";
 
 //All datas used this page
@@ -29,7 +40,7 @@ interface Params {
   imdbID: string;
 }
 
-const Descriptions = () => {
+export default function Descriptions() {
   const routes = useRoute();
   const navigation = useNavigation();
   const routeMovieParams = routes.params as Params;
@@ -41,19 +52,24 @@ const Descriptions = () => {
     });
   }, [routeMovieParams.imdbID]);
 
-  function movesBack() {
-    navigation.goBack();
-  }
-
   return (
     <Container>
       <Header />
       {movies ? (
         <Banner>
           <BannerMovie source={{ uri: movies.Poster }} />
+          <>
+            <FavoriteHeart>
+              <Ionicons name="ios-heart" size={50} color="#a83f39" />
+            </FavoriteHeart>
+
+            <UnFavoriteHeart>
+              <Ionicons name="ios-heart" size={50} color="#fff" />
+            </UnFavoriteHeart>
+          </>
 
           <BannerInfo>
-            <TitleMovie>{movies.Title}</TitleMovie>
+            <MovieTitle>{movies.Title}</MovieTitle>
             <DescriptionMovie> {movies.Plot}</DescriptionMovie>
             <TitleDescriptionMovie>Producer:</TitleDescriptionMovie>
             <DescriptionMovie> {movies.Production}</DescriptionMovie>
@@ -80,6 +96,4 @@ const Descriptions = () => {
       )}
     </Container>
   );
-};
-
-export default Descriptions;
+}
