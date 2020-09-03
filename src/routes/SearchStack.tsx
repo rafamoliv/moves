@@ -7,7 +7,7 @@ import Descriptions from "../pages/Descriptions";
 const { Navigator, Screen } = createStackNavigator();
 
 //Exports Stacks rtoutes
-export default function AppStack() {
+export default function SearchStack() {
   return (
     <Navigator headerMode="none">
       <Screen name="Search" component={Search} />

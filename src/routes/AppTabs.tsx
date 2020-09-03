@@ -1,6 +1,6 @@
 import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AppStack from "./AppStack";
+import SearchStack from "./SearchStack";
 
 import Landing from "../pages/Landing";
 import Favorites from "../pages/Favorites";
@@ -47,8 +47,8 @@ export default function AppTabs() {
         }}
       />
       <Screen
-        name="AppStack"
-        component={AppStack}
+        name="SearchStack"
+        component={SearchStack}
         options={{
           tabBarLabel: "Search",
           tabBarIcon: ({ color, size }) => {

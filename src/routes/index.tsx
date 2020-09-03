@@ -1,6 +1,6 @@
 import React from "react";
 import AppTabs from "./AppTabs";
-import AppStack from "./AppStack";
+import SearchStack from "./SearchStack";
 import { NavigationContainer, DarkTheme } from "@react-navigation/native";
 
 // Exports all routes
