@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Landing from "../pages/Landing";
 import SearchStack from "./SearchStack";
 import FavoritesStack from "./FavoritesStack";
+import Settings from "../pages/Settings";
 
 import { Ionicons } from "@expo/vector-icons";
 
@@ -62,6 +63,16 @@ export default function AppTabs() {
           tabBarLabel: "Favorites",
           tabBarIcon: ({ color, size }) => {
             return <Ionicons name="ios-heart" size={size} color={color} />;
+          },
+        }}
+      />
+      <Screen
+        name="Settings"
+        component={Settings}
+        options={{
+          tabBarLabel: "Settings",
+          tabBarIcon: ({ color, size }) => {
+            return <Ionicons name="ios-settings" size={size} color={color} />;
           },
         }}
       />

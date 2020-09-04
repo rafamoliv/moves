@@ -17,7 +17,7 @@ import {
   DescriptionMovieRating,
 } from "./styles";
 import Header from "../../components/Header";
-import AsyncStorage from "@react-native-community/async-storage";
+import { AsyncStorage } from "react-native";
 
 //All datas used this page
 interface Parameters {
@@ -39,12 +39,48 @@ interface Parameters {
 //Params ID
 interface Params {
   imdbID: string;
+  favorite: string;
 }
 
 export default function Descriptions() {
   const routes = useRoute();
   const routeMovieParams = routes.params as Params;
   const [movies, setMovies] = useState<Parameters>();
+  const [favorite, setFavorite] = useState<string>();
+
+  const save = async () => {
+    try {
+      await AsyncStorage.setItem("favorites", favorite as string);
+    } catch (err) {
+      alert(err);
+    }
+  };
+
+  const load = async () => {
+    try {
+      const favorite = await AsyncStorage.getItem("favorites");
+
+      if (favorite !== null) {
+        setFavorite(favorite);
+      }
+    } catch (err) {
+      alert(err);
+    }
+  };
+
+  const remove = async () => {
+    try {
+      await AsyncStorage.removeItem("favorites");
+    } catch (err) {
+      alert(err);
+    } finally {
+      setFavorite("");
+    }
+  };
+
+  useEffect(() => {
+    load();
+  }, []);
 
   useEffect(() => {
     axios.get(`http://www.omdbapi.com/?i=${routeMovieParams.imdbID}&apikey=972e1325`).then(({ data }) => {
@@ -59,16 +95,17 @@ export default function Descriptions() {
         <Banner>
           <BannerMovie source={{ uri: movies.Poster }} />
           <>
-            <FavoriteHeart>
+            {/* <FavoriteHeart onPress={() => remove()}>
               <Ionicons name="ios-heart" size={50} color="#a83f39" />
-            </FavoriteHeart>
+            </FavoriteHeart> */}
 
-            <UnFavoriteHeart>
+            <UnFavoriteHeart onPress={() => save()}>
               <Ionicons name="ios-heart" size={50} color="#fff" />
             </UnFavoriteHeart>
           </>
 
           <BannerInfo>
+            <DescriptionMovieRating>{favorite}</DescriptionMovieRating>
             <MovieTitle>{movies.Title}</MovieTitle>
             <DescriptionMovie> {movies.Plot}</DescriptionMovie>
             <TitleDescriptionMovie>Producer:</TitleDescriptionMovie>
