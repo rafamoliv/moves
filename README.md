@@ -7,7 +7,6 @@
 ## Contents
 
 - [Technologies](#computer-technologies)
-- [Features](#rocket-features)
 - [How to Run](#construction_worker-how-to-run)
 
 ## Technologies
@@ -21,11 +20,6 @@ This project was made using the follow technologies:
 - [React Navigations](https://reactnavigation.org/)
 - [Api OMDB](http://omdbapi.com/)
 - [Expo](https://expo.io/)
-
-## Features
-
-- Website to sign up teachers and students.
-- App to connect teachers and students.
 
 ## How to run
 
