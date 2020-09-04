@@ -1,6 +1,6 @@
 # Moves - React Native Application
 
-[![Moves - React Native App](http://img.youtube.com/vi/MF2jWIeqzA0/0.jpg)](http://www.youtube.com/watch?v=MF2jWIeqzA0 "Moves - React Native App")
+![Moves - React Native App](src/assets/movesgif.gif)
 
 ## Contents
 
