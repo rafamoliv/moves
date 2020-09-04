@@ -4,18 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import Lottie from "lottie-react-native"; // lottie to render json Lotties from After effects
 import axios from "axios";
 import moves from "../../assets/icons/playGold.json"; // json Lottie
-import {
-  Container,
-  MovieTitle,
-  TitleDescriptionMovie,
-  Banner,
-  BannerMovie,
-  BannerInfo,
-  FavoriteHeart,
-  UnFavoriteHeart,
-  DescriptionMovie,
-  DescriptionMovieRating,
-} from "./styles";
+import { Container, MovieTitle, TitleDescriptionMovie, Banner, BannerMovie, BannerInfo, DescriptionMovie, DescriptionMovieRating } from "./styles";
 import Header from "../../components/Header";
 import { AsyncStorage } from "react-native";
 
@@ -94,15 +83,6 @@ export default function Descriptions() {
       {movies ? (
         <Banner>
           <BannerMovie source={{ uri: movies.Poster }} />
-          <>
-            {/* <FavoriteHeart onPress={() => remove()}>
-              <Ionicons name="ios-heart" size={50} color="#a83f39" />
-            </FavoriteHeart> */}
-
-            <UnFavoriteHeart onPress={() => save()}>
-              <Ionicons name="ios-heart" size={50} color="#fff" />
-            </UnFavoriteHeart>
-          </>
 
           <BannerInfo>
             <DescriptionMovieRating>{favorite}</DescriptionMovieRating>

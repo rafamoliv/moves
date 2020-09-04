@@ -17,6 +17,7 @@ export default function Search() {
   const navigation = useNavigation();
   const [value, onChangeText] = React.useState("");
 
+  //get api
   useEffect(() => {
     if (searchText === " ") {
       return;
@@ -26,6 +27,7 @@ export default function Search() {
     });
   }, [searchText]);
 
+  //go to details
   function movieDetail(imdbID: string) {
     navigation.navigate("Descriptions", {
       imdbID: imdbID,
