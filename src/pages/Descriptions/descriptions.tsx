@@ -5,6 +5,7 @@ import moves from "../../assets/icons/playGold.json"; // json Lottie
 import { Container, MovieTitle, TitleDescriptionMovie, Banner, BannerMovie, BannerInfo, DescriptionMovie, DescriptionMovieRating } from "./styles";
 import Header from "../../components/Header";
 import api from "../../services/api";
+import { API_KEY } from "../../../config.json";
 
 //All datas used this page
 interface Parameters {
@@ -34,7 +35,7 @@ export default function Descriptions() {
   const [movies, setMovies] = useState<Parameters>();
 
   useEffect(() => {
-    api.get(`/?i=${routeMovieParams.imdbID}&apikey=972e1325`).then(({ data }) => {
+    api.get(`/?i=${routeMovieParams.imdbID}&apikey=${API_KEY}`).then(({ data }) => {
       setMovies(data);
     });
   }, [routeMovieParams.imdbID]);

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
-import axios from "axios";
 import { ViewInput, ViewInputText, SearchResults, ButtonInput, BannerImage, Container, Banner, TitleMovie, TitleError } from "./styles";
 import Header from "../../components/Header";
 import api from "../../services/api";
+import { API_KEY } from "../../../config.json";
 
 interface Post {
   Title: string;
@@ -23,7 +23,7 @@ export default function Search() {
     if (searchText === " ") {
       return;
     }
-    api.get(`/?s=${searchText}&apikey=972e1325`).then(({ data }) => {
+    api.get(`/?s=${searchText}&apikey=${API_KEY}`).then(({ data }) => {
       setMovie(data.Search);
     });
   }, [searchText]);
@@ -35,6 +35,7 @@ export default function Search() {
     });
   }
 
+  //set Search
   function submitSearch() {
     if (value !== "") {
       setSearchText(value);
@@ -49,7 +50,6 @@ export default function Search() {
       {/* Search input and Search-icon */}
       <ViewInput>
         <ViewInputText
-          maxLength={30}
           placeholder="Search a Movie, Series or Game"
           autoCorrect={false}
           onChangeText={(text) => onChangeText(text)}
