@@ -1,6 +1,8 @@
 # Moves - React Native Application
 
-![Moves - React Native App](src/assets/movesgif.gif)
+<p align="center">
+<img src="src/assets/movesgif.gif" alt="Moves - React Native App" width="200"/>
+</p>
 
 ## Contents
 
