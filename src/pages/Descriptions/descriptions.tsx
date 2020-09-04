@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useRoute } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
 import Lottie from "lottie-react-native"; // lottie to render json Lotties from After effects
-import axios from "axios";
 import moves from "../../assets/icons/playGold.json"; // json Lottie
 import { Container, MovieTitle, TitleDescriptionMovie, Banner, BannerMovie, BannerInfo, DescriptionMovie, DescriptionMovieRating } from "./styles";
 import Header from "../../components/Header";
-import { AsyncStorage } from "react-native";
+import api from "../../services/api";
 
 //All datas used this page
 interface Parameters {
@@ -28,51 +26,15 @@ interface Parameters {
 //Params ID
 interface Params {
   imdbID: string;
-  favorite: string;
 }
 
 export default function Descriptions() {
   const routes = useRoute();
   const routeMovieParams = routes.params as Params;
   const [movies, setMovies] = useState<Parameters>();
-  const [favorite, setFavorite] = useState<string>();
-
-  const save = async () => {
-    try {
-      await AsyncStorage.setItem("favorites", favorite as string);
-    } catch (err) {
-      alert(err);
-    }
-  };
-
-  const load = async () => {
-    try {
-      const favorite = await AsyncStorage.getItem("favorites");
-
-      if (favorite !== null) {
-        setFavorite(favorite);
-      }
-    } catch (err) {
-      alert(err);
-    }
-  };
-
-  const remove = async () => {
-    try {
-      await AsyncStorage.removeItem("favorites");
-    } catch (err) {
-      alert(err);
-    } finally {
-      setFavorite("");
-    }
-  };
 
   useEffect(() => {
-    load();
-  }, []);
-
-  useEffect(() => {
-    axios.get(`http://www.omdbapi.com/?i=${routeMovieParams.imdbID}&apikey=972e1325`).then(({ data }) => {
+    api.get(`/?i=${routeMovieParams.imdbID}&apikey=972e1325`).then(({ data }) => {
       setMovies(data);
     });
   }, [routeMovieParams.imdbID]);
@@ -85,7 +47,6 @@ export default function Descriptions() {
           <BannerMovie source={{ uri: movies.Poster }} />
 
           <BannerInfo>
-            <DescriptionMovieRating>{favorite}</DescriptionMovieRating>
             <MovieTitle>{movies.Title}</MovieTitle>
             <DescriptionMovie> {movies.Plot}</DescriptionMovie>
             <TitleDescriptionMovie>Producer:</TitleDescriptionMovie>

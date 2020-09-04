@@ -4,6 +4,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import axios from "axios";
 import { ViewInput, ViewInputText, SearchResults, ButtonInput, BannerImage, Container, Banner, TitleMovie, TitleError } from "./styles";
 import Header from "../../components/Header";
+import api from "../../services/api";
 
 interface Post {
   Title: string;
@@ -22,7 +23,7 @@ export default function Search() {
     if (searchText === " ") {
       return;
     }
-    axios.get(`https://www.omdbapi.com/?s=${searchText}&apikey=972e1325`).then(({ data }) => {
+    api.get(`/?s=${searchText}&apikey=972e1325`).then(({ data }) => {
       setMovie(data.Search);
     });
   }, [searchText]);
