@@ -25,7 +25,7 @@ This project was made using the follow technologies:
 
 # Clone Repository
 
-\$ git clone https://github.com/rafamoliv/Proffy-TS
+\$ git clone https://github.com/rafamoliv/moves
 
 # Install and Run Aplication
 
