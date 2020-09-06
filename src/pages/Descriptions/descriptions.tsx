@@ -7,7 +7,7 @@ import Header from "../../components/Header";
 import api from "../../services/api";
 import { API_KEY } from "../../../config.json";
 
-//All datas used this page
+//All datas used
 interface Parameters {
   imdbID: string;
   Poster: string;
