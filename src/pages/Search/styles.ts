@@ -40,7 +40,7 @@ export const Banner = styled.TouchableOpacity`
   border: 1px solid #b5905f;
   border-radius: 5px;
   margin: 25px 15px 10px 30px
-  height: 85%;
+  height: 80%;
   width: 250px;
 `;
 
@@ -51,7 +51,7 @@ export const BannerImage = styled.Image`
 `;
 
 export const TitleMovie = styled.Text`
-  font-size: 20px;
+  font-size: 18px;
   margin: 10px 10px;
   color: #fff;
   font-family: "Roboto_400Regular";
@@ -66,4 +66,8 @@ export const TitleError = styled.Text`
   color: #b5905f;
   margin: 50px 0px;
   align-self: center;
+`;
+
+export const AdMobBanner = styled.View`
+  align-items:   center;
 `;

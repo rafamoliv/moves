@@ -7,6 +7,22 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      
+      "package": "com.rodeveloper.moves",
+      "config": {
+        
+        "googleMobileAdsAppId": "ca-app-pub-2851827333967207~5475877718"
+      }
+    },
+    "ios": {
+      
+      "bundleIdentifier": "com.rodeveloper.moves",
+      "config": {
+        
+        "googleMobileAdsAppId": "ca-app-pub-2851827333967207~5475877718"
+      }
+    }
   }
 }

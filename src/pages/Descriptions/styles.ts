@@ -73,3 +73,7 @@ export const DescriptionMovieRating = styled.Text`
   padding: 5px;
   font-family: "Roboto_400Regular";
 `;
+
+export const AdMobBanner = styled.View`
+  align-items:   center;
+`;

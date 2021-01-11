@@ -37,3 +37,8 @@ export const SpaceToRight = styled.TouchableOpacity`
 export const SpaceToLeft = styled.TouchableOpacity`
   margin-left: 5;
 `;
+
+export const AdMobBannerDown = styled.View`
+  align-items:   center;
+  margin-top: 125px;
+`;

@@ -5,6 +5,10 @@ import { ViewInput, ViewInputText, SearchResults, ButtonInput, BannerImage, Cont
 import Header from "../../components/Header";
 import api from "../../services/api";
 import { API_KEY } from "../../../config.json";
+import {
+  AdMobBanner,
+  setTestDeviceIDAsync,
+} from 'expo-ads-admob';
 
 interface Post {
   Title: string;
@@ -75,6 +79,11 @@ export default function Search() {
           <TitleError>Movie not found</TitleError>
         )}
       </SearchResults>
+      <AdMobBanner
+        bannerSize="fullBanner"
+        adUnitID="ca-app-pub-2851827333967207/9231273989" // Test ID, Replace with your-admob-unit-id
+        servePersonalizedAds // true or false
+        onDidFailToReceiveAdWithError={ (err => console.log) } />
     </Container>
   );
 }

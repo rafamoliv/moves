@@ -6,6 +6,10 @@ import { Container, MovieTitle, TitleDescriptionMovie, Banner, BannerMovie, Bann
 import Header from "../../components/Header";
 import api from "../../services/api";
 import { API_KEY } from "../../../config.json";
+import {
+  AdMobBanner,
+  setTestDeviceIDAsync,
+} from 'expo-ads-admob';
 
 //All datas used
 interface Parameters {
@@ -73,6 +77,11 @@ export default function Descriptions() {
       ) : (
         <Lottie source={moves} resizeMode="contain" autoSize autoPlay loop />
       )}
+      <AdMobBanner
+        bannerSize="fullBanner"
+        adUnitID="ca-app-pub-2851827333967207/9231273989" // Test ID, Replace with your-admob-unit-id
+        servePersonalizedAds // true or false
+        onDidFailToReceiveAdWithError={ (err => console.log) } />
     </Container>
   );
 }
