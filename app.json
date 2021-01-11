@@ -5,12 +5,17 @@
     "name": "moves",
     "slug": "moves",
     "version": "1.0.0",
+    "icon": "./src/assets/icon.png",
     "assetBundlePatterns": [
       "**/*"
     ],
     "android": {
       
       "package": "com.rodeveloper.moves",
+      "adaptiveIcon": { 
+        "foregroundImage": "./src/assets/icon.png",
+        "backgroundColor": "#000000" 
+      },
       "config": {
         
         "googleMobileAdsAppId": "ca-app-pub-2851827333967207~5475877718"
