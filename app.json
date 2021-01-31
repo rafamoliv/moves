@@ -12,6 +12,7 @@
     "android": {
       
       "package": "com.rodeveloper.moves",
+      "versionCode": 2,
       "adaptiveIcon": { 
         "foregroundImage": "./src/assets/icon.png",
         "backgroundColor": "#000000" 
