@@ -4,7 +4,7 @@
   "expo": {
     "name": "moves",
     "slug": "moves",
-    "version": "2.0.0",
+    "version": "1.3.2",
     "icon": "./src/assets/icon.png",
     "assetBundlePatterns": [
       "**/*"
@@ -12,7 +12,8 @@
     "android": {
       
       "package": "com.rodeveloper.moves",
-      "versionCode": 2,
+      "versionCode": 3,
+      "permissions": [],
       "adaptiveIcon": { 
         "foregroundImage": "./src/assets/icon.png",
         "backgroundColor": "#000000" 
